@@ -58,4 +58,23 @@ public class Matrix {
 		}
 		this.array2d[row] = rowTemp;
 	}
+	
+	public String toString() {
+		String output = "[";
+		int j, i = 0;
+		for(i = 0; i < array2d.length; i++) {
+			for(j = 0; j < array2d[0].length; j++) {
+				if (j > 0) {
+					output = output + ",";
+				}
+				output = output + array2d[i][j];
+			}
+			if (i > 0) {
+				output = output + "; ";
+			}
+			output = output + array2d[i][j];
+		}
+		output = output + "]";
+		return output;
+	}
 }
