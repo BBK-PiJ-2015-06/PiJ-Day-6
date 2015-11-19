@@ -82,4 +82,26 @@ public class Matrix {
 			System.out.println("Invalid input: row length does not match");
 		} 
 	}
+	public boolean isSymmetrical() {
+		MatrixChecker test = new MatrixChecker();
+		if(this.columnSize == 1) {
+			int[] array = new int[this.rowSize];
+			for (int i = 0; i < this.rowSize; i++) {
+				array[i] = this.matrix[i][0];
+			}
+			return test.isSymmetrical(array);
+		} else if(this.rowSize == 1) {
+			int[] array = new int[this.columnSize];
+			for (int j = 0; j < this.columnSize; j++) {
+				array[j] = this.matrix[0][j];
+			}
+			return test.isSymmetrical(array);
+		} else {
+			return test.isSymmetrical(this.matrix);
+		}
+	}
+	public boolean isTriangular() {
+		MatrixChecker test = new MatrixChecker();
+		return test.isTriangular(this.matrix);
+	}
 }
